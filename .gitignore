@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+# Client review output stays out of this repo unless deliberately added as an example.
+/reviews/
