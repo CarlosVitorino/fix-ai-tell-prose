@@ -1,0 +1,33 @@
+---
+description: fix AI-tell prose — the brief this project was handed off from
+alwaysApply: true
+---
+
+# fix AI-tell prose
+Site owners and agencies pay a developer to crawl their sitemap, score each page for AI-sounding prose, and present human-approved fixes rather than auto-publish them.
+What would stop this: nothing!
+The smallest thing worth building first: One SKILL.md (plus a small references/ folder) covering a first batch of the highest-confidence AI-tell patterns, each with detection criteria and a before→after replacement table, tested by running it against a handful of real pages and confirming a human reviewer would approve the rewrites. If it produces fixes you would actually sign off on, the crawl-and-score service wrapper can follow.
+Do not build:
+- An automated detector or linter-first tool — the rulebook prescribes fixes, it does not score first
+- Auto-publishing fixes to live sites — everything is human-approved before it lands
+- A hosted crawler or sitemap-scanning service in the first version
+- A web UI or dashboard — the interface is the agent loading the skill
+- Exhaustive coverage of all 29 patterns before the first ones are validated
+- A proprietary license — the reference projects are MIT and the format is the proven convention
+
+
+## How to work on this
+
+These are defaults to start from, not rules. If you have a better way to reach the goal, use it and say why. Ask the person you are working for whenever the brief leaves something that changes the outcome.
+
+**Size of the build: Full product.** A production-ready product: sound architecture, tests, security, monitoring and documentation, built in reviewed stages.
+
+**Before writing code**
+- Read `build-brief.md` end to end.
+- Never build anything listed under "Do not build".
+- Work in the phases of `docs/build-plan.md`, and check in with the person at the end of each one.
+
+**Throughout**
+- Keep commits small and the app runnable at every step.
+- If the brief looks wrong or contradicts itself, say so instead of working around it.
+- When the stop condition in the brief is met, tell the person before building anything more.
