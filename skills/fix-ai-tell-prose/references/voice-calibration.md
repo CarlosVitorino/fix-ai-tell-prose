@@ -13,8 +13,8 @@ In order of preference:
 2. The page on the site that sounds most like one person wrote it: often the About page,
    a founder's letter, an old blog post, or the FAQ.
 3. If every page reads generic, the owner's description of how they talk to customers.
-4. If you have nothing, use the defaults at the end of this file and say so in the voice
-   note.
+4. If you have nothing, use the defaults at the end of this file (or the SaaS preset for
+   software sites) and say so in the voice note.
 
 Never calibrate on the pages you are about to fix. Their voice is the problem.
 
@@ -40,6 +40,11 @@ Source: About page (https://client.example/about), blocks b003–b009.
   unless the sample uses them.
 
 ## Defaults when there is no sample
+
+For software, SaaS and AI-tool sites, use the preset in `references/voice-saas.md` instead
+of the defaults below, and say so in the voice note.
+
+Otherwise:
 
 - "We" for the business, "you" for the reader.
 - Contractions on (most small-business sites use them).

@@ -46,6 +46,7 @@ skills/fix-ai-tell-prose/
   SKILL.md                      workflow, guardrails, pattern summary
   references/patterns.md        AT-01..AT-13: detection, false positives, fix, before→after table
   references/voice-calibration.md
+  references/voice-saas.md      voice preset for SaaS / AI-tool sites
   references/review-format.md   review file and site index format, with a worked example
   references/page-pass.md       working down a URL list or sitemap
   scripts/pages.py              URL list/sitemap expansion; page → numbered prose blocks
