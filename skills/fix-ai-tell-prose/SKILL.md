@@ -58,7 +58,7 @@ python3 <skill-dir>/scripts/pages.py extract saved-page.html
 ```
 
 The output numbers each text block (`[b007 p] ...`). Use those block IDs as the location
-of each finding. Navigation, footers, scripts and hidden elements are already dropped. If
+of each finding. For pasted copy, number the paragraphs yourself (`p1`, `p2`, ...). Navigation, footers, scripts and hidden elements are already dropped. If
 the helper cannot fetch a page (blocked, needs login, rendered by JavaScript), say so in the
 index and ask the owner for the HTML or the copy; do not reconstruct the page from memory
 or from a summarising web tool.

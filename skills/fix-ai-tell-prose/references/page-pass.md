@@ -73,7 +73,7 @@ The helper refuses:
 - non-http(s) URLs;
 - hosts that resolve to private, loopback or link-local addresses (pass
   `--allow-private` only when you are deliberately reviewing a local staging copy);
-- responses over 5 MB or slower than 20 seconds;
+- responses over 5 MB, or servers that send nothing for 20 seconds;
 - responses that are not HTML (or XML for sitemaps);
 - sitemaps that declare a DOCTYPE or entities.
 
