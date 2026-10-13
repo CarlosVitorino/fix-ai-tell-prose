@@ -13,7 +13,7 @@ test:
 	$(PYTHON) -m pytest -q
 
 validate:
-	$(PYTHON) tools/validate_skill.py skills/fix-ai-tell-prose
+	$(PYTHON) tools/validate_skill.py skills/fix-ai-tell-prose --evals evals/cases.json
 
 install-dev:
 	$(PYTHON) -m pip install -r requirements-dev.txt

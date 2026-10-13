@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://client.example/</loc></url>
+  <url><loc> https://client.example/about </loc><lastmod>2026-01-01</lastmod></url>
+  <url><loc>https://client.example/blog/first-post</loc></url>
+  <url><loc>https://client.example/blog/tag/news</loc></url>
+  <url><loc>https://client.example/about</loc></url>
+  <url><loc>ftp://client.example/file</loc></url>
+</urlset>

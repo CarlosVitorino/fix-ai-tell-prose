@@ -103,6 +103,9 @@ def fetch(url: str, accept: tuple[str, ...], allow_private: bool = False) -> tup
     except FetchError:
         raise
     except urllib.error.HTTPError as exc:
+        if 300 <= exc.code < 400 and exc.headers and exc.headers.get("Location"):
+            target = exc.headers["Location"]
+            raise FetchError(f"refusing redirect from {url} to {target}") from exc
         raise FetchError(f"HTTP {exc.code} from {url}") from exc
     except urllib.error.URLError as exc:
         if isinstance(exc.reason, FetchError):

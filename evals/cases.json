@@ -1,0 +1,124 @@
+{
+  "about": "Regression cases for the fix-ai-tell-prose rulebook. All text is invented for invented businesses. Run the skill on each 'text' as pasted copy and check: every ID in 'expect' is found (as a finding's pattern or on its Also line), no other numbered findings appear, every string in 'must_keep' survives in the rewrites, and nothing new (names, numbers, sources) is added. Cases with expect: [] are false-positive checks: the skill should report no findings. See docs/validation-protocol.md.",
+  "cases": [
+    {
+      "id": "at01-leftovers",
+      "text": "Certainly! Here is a short introduction for your bakery's website. As of my last update, Rye & Crumb is open Tuesday to Sunday from 7am. I hope this helps!",
+      "expect": ["AT-01"],
+      "must_keep": ["Rye & Crumb", "Tuesday to Sunday", "7am"]
+    },
+    {
+      "id": "at01-placeholder",
+      "text": "Founded in [Year], [Company Name] has helped over 200 families find their dream home in Bristol.",
+      "expect": ["AT-01"],
+      "must_keep": ["200 families", "Bristol"]
+    },
+    {
+      "id": "at02-opener",
+      "text": "In today's fast-paced digital landscape, having a website that loads quickly has never been more important. In this article, we'll explore how our hosting keeps pages under one second.",
+      "expect": ["AT-02"],
+      "must_keep": ["under one second"]
+    },
+    {
+      "id": "at03-vocabulary",
+      "text": "At Brightpath Accounting, we leverage cutting-edge software to deliver a seamless, holistic experience, empowering small businesses to navigate the complexities of tax season.",
+      "expect": ["AT-03"],
+      "must_keep": ["Brightpath Accounting", "small businesses", "tax season"]
+    },
+    {
+      "id": "at04-filler",
+      "text": "It is important to note that, in order to qualify for free delivery, orders must be over $50 due to the fact that our couriers charge per drop.",
+      "expect": ["AT-04"],
+      "must_keep": ["free delivery", "$50"]
+    },
+    {
+      "id": "at05-hedges",
+      "text": "Insulating your loft may potentially help to somewhat reduce heat loss, which could possibly lower your bills.",
+      "expect": ["AT-05"],
+      "must_keep": ["loft", "heat loss"]
+    },
+    {
+      "id": "at06-copula",
+      "text": "The Mill boasts twelve guest rooms and serves as the village's only pub. Its beer garden stands as a favourite spot for walkers.",
+      "expect": ["AT-06"],
+      "must_keep": ["twelve guest rooms", "only pub", "beer garden"]
+    },
+    {
+      "id": "at07-significance",
+      "text": "Since opening in 2012, Kettle & Co has played a pivotal role in shaping Leeds' coffee scene, and our new roastery marks a significant milestone in our journey.",
+      "expect": ["AT-07"],
+      "must_keep": ["2012", "Kettle & Co", "Leeds", "roastery"]
+    },
+    {
+      "id": "at08-brochure",
+      "text": "Nestled in the heart of the Cotswolds, our stunning, world-class spa offers an unforgettable escape with unparalleled service.",
+      "expect": ["AT-08"],
+      "must_keep": ["Cotswolds", "spa"]
+    },
+    {
+      "id": "at09-ing-tail",
+      "text": "Last year our volunteers planted 3,000 trees across the county, highlighting our deep commitment to the environment and fostering a greener future for all.",
+      "expect": ["AT-09"],
+      "must_keep": ["3,000 trees", "county"]
+    },
+    {
+      "id": "at10-contrast",
+      "text": "Ironwood Fitness isn't just a gym. It's a community. Members get two free personal training sessions when they join.",
+      "expect": ["AT-10"],
+      "must_keep": ["Ironwood Fitness", "two free personal training sessions"]
+    },
+    {
+      "id": "at11-triads",
+      "text": "Our team is passionate, dedicated and committed. We deliver fast, reliable and affordable IT support that is simple, secure and scalable.",
+      "expect": ["AT-11"],
+      "must_keep": ["IT support"]
+    },
+    {
+      "id": "at12-attribution",
+      "text": "Studies show that 8 out of 10 dogs prefer our grain-free food, and experts agree it is the healthiest option available.",
+      "expect": ["AT-12"],
+      "must_keep": ["grain-free"]
+    },
+    {
+      "id": "at13-conclusion",
+      "text": "Call us on 0161 555 0100 to book a survey. In conclusion, choosing the right roofer is essential, and with the right partner the possibilities are endless.",
+      "expect": ["AT-13"],
+      "must_keep": ["0161 555 0100"]
+    },
+    {
+      "id": "mixed-service-page",
+      "text": "In today's ever-evolving world, finding a reliable electrician is crucial. At Voltline, we don't just fix wiring; we build trust. Our certified team serves as your one-stop shop for all electrical needs, ensuring peace of mind for every customer. Experts agree that regular inspections save money. Ultimately, the future of your home is bright with Voltline.",
+      "expect": ["AT-02", "AT-07", "AT-08", "AT-09", "AT-10", "AT-12", "AT-13"],
+      "must_keep": ["Voltline", "certified"],
+      "notes": "AT-03 and AT-06 may appear on Also lines; that is acceptable."
+    },
+    {
+      "id": "fp-literal-landscape",
+      "text": "Greenfield Landscapes designs and builds gardens in Surrey. We lay patios, plant hedges and maintain lawns for about 150 households, mostly on monthly contracts.",
+      "expect": [],
+      "must_keep": ["Greenfield Landscapes", "150 households"],
+      "notes": "'Landscapes' is the literal trade; 'patios, hedges and lawns' is a real three-item list."
+    },
+    {
+      "id": "fp-real-contrast",
+      "text": "This is not a subscription: you pay once and keep the software. Updates for the current major version are free.",
+      "expect": [],
+      "must_keep": ["pay once"],
+      "notes": "The contrast corrects a belief readers hold (most software is a subscription)."
+    },
+    {
+      "id": "fp-specific-human",
+      "text": "We're a two-person shop on Mill Lane. Dave fixes bikes; I run the till and the coffee machine, which is older than our van. Repairs are usually done in two days, and we'll ring you if a part is going to take longer.",
+      "expect": [],
+      "must_keep": ["Mill Lane", "two days"],
+      "notes": "Specific, uneven, human. Any finding here is a false positive."
+    },
+    {
+      "id": "fp-supported-significance",
+      "text": "The 1953 flood was a turning point for the town: after it, the council built the sea wall that still protects the harbour, completed in 1958.",
+      "expect": [],
+      "must_keep": ["1953", "1958", "sea wall"],
+      "notes": "The significance is supported by the facts in the same sentence."
+    }
+  ]
+}
