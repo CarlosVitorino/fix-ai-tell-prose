@@ -1,5 +1,11 @@
 # Patterns: first batch (AT-01 to AT-13)
 
+This is an optional catalogue of examples, retained from the 0.1 rulebook. Its thresholds
+describe those named patterns, not when an editor is allowed to improve a passage.
+Use `references/writing-principles.md` for the current approach. You may flag problems
+outside this list without inventing a pattern ID. Concrete nouns, a nearby button or an
+isolated occurrence do not automatically make a weak passage worth keeping.
+
 Each pattern has the same parts:
 
 - **Pass and threshold.** Which pass finds it, and whether one sighting is enough or it

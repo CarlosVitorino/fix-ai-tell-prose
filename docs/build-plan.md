@@ -1,5 +1,15 @@
 # Build plan — fix AI-tell prose
 
+## Current direction
+
+The owner replaced the pattern-gated approach with a simple editor-led skill in 0.2,
+then made direct source edits the default in 0.3. Writing principles, voice and optional
+references guide the agent; the owner reviews the diff afterward. Reports are opt-in,
+and publishing requires separate authorization. The 0.1 phases and decisions below are
+historical, not requirements to restore.
+Keep the existing helpers for optional use; do not build more infrastructure for this
+revision. Confirm usefulness by reviewing copy with the owner, including missed passages.
+
 Size: **Full product**, applied to what this product actually is: an agent skill plus a few
 small local helper scripts, not a hosted app. Tick phases off as they land; decisions are at
 the bottom.

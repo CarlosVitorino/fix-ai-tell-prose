@@ -14,7 +14,7 @@ and checkable, and there is very little hype. A lot of AI-tool marketing does th
 
 ```
 Voice: SaaS preset (no owner sample). Product or "we" as subject; reader is "you".
-Sentences: short and declarative, 6–14 words; one longer sentence per paragraph at most.
+Sentences: clear and varied; keep longer sentences when they explain the idea well.
 Contractions: yes, sparingly ("you'll", "it's"); none in legal or security copy.
 Register: confident and precise, technical when the reader is technical; no hype, no
   exclamation marks, no emoji.
@@ -27,10 +27,10 @@ Source: references/voice-saas.md preset.
 
 1. **Lead with what the product does, in a verb.** "Sync issues from GitHub in real time",
    not "Experience a seamless development workflow".
-2. **One claim per sentence, and make it checkable.** A number, a named integration, a
-   time, a limit, a price. If the page has no such fact, say less rather than inflate.
-3. **Headlines are short statements, not slogans.** Five to eight words, sentence case,
-   no colon-and-subtitle pattern, no question headlines.
+2. **Make claims checkable.** Use the integrations, mechanisms, limits or prices already
+  supplied. Do not add numbers or force one claim per sentence merely to fit a preset.
+3. **Headlines orient the reader.** Prefer a clear statement of the section's subject.
+  A question or distinctive phrase is fine when it helps; there is no word-count quota.
 4. **Say what the AI does, not that it is AI.** "Drafts a reply from the ticket history" beats
    "AI-powered support". Mention the model or method only if the page already does.
 5. **Precise verbs over power verbs.** use, build, ship, send, sync, cut, find, draft,
@@ -61,8 +61,10 @@ Source: references/voice-saas.md preset.
 - **Don't make it terse to the point of vague.** "Fast. Simple. Powerful." is a triad of
   slogans (AT-11), not this voice.
 - **Don't invent specifics to fit the style.** If the page has no numbers, the rewrite has
-  no numbers; use an `[owner: ...]` question where a specific is clearly needed.
-- **Security, compliance and pricing text is protected.** Flag, don't rewrite (SKILL.md,
-  Non-negotiables 5).
+  no numbers. Leave claims that need missing evidence unchanged and ask the owner in the
+  final response. Bracketed questions in examples are editorial notes, not page copy;
+  never insert them into the source during direct editing.
+- **Security, compliance and pricing text is protected.** Keep protected facts and terms
+  intact. Ask the owner before proposing changes to legal or compliance wording.
 - **Developer docs** follow the same voice but stay fully neutral: no "you'll love", no
   marketing claims, imperative mood for steps ("Run", "Set", "Deploy").

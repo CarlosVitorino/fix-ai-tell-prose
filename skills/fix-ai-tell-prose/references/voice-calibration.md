@@ -1,8 +1,7 @@
 # Voice calibration
 
-Removing tells is half the job. A rewrite that is free of tells but sounds like a different
-company will be rejected. Calibrate once per site, before the first page, and put the
-result in every review file as the voice note.
+A clearer rewrite still needs to sound like its owner. Establish the voice once per site
+and leave a short note about what you are preserving. No fixed questionnaire is required.
 
 ## 1. Find the owner's real voice
 
@@ -16,11 +15,13 @@ In order of preference:
 4. If you have nothing, use the defaults at the end of this file (or the SaaS preset for
    software sites) and say so in the voice note.
 
-Never calibrate on the pages you are about to fix. Their voice is the problem.
+Prefer an independent sample when available. If the draft itself contains distinctive
+writing worth preserving, use it; do not assume its entire voice is wrong. Separate those
+traits from the generic or awkward passages you are changing.
 
 ## 2. Write the voice note
 
-Five lines, each a fact you observed, not an adjective. Example:
+A few observations, with their source. The example is not a required form:
 
 ```
 Voice: first person plural ("we"), addresses reader as "you".
@@ -35,7 +36,7 @@ Source: About page (https://client.example/about), blocks b003–b009.
 
 - Use the same pronouns, contractions and register in every "after" passage.
 - Prefer the house words over neutral synonyms.
-- Match sentence length to the note, not to your default.
+- Preserve the writer's cadence without imposing sentence-length quotas.
 - Do not import personality the source does not have: no jokes, slang or exclamation marks
   unless the sample uses them.
 

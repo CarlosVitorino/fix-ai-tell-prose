@@ -1,5 +1,12 @@
 # Page-by-page pass over a URL list or sitemap
 
+This is a legacy report-only workflow retained from 0.1. Use it only when an owner
+explicitly requests review files without edits. By default, find the owning source,
+apply copy fixes directly and let the owner review the diff afterward. Pattern IDs,
+review files and an extraction script are not required. Check interface text omitted
+by the helper separately. Optional URL expansion commands below can also help locate
+pages, but do not change the default deliverable.
+
 Use this when the owner or agency supplies many pages. The skill works down the list one
 page at a time; it never discovers pages by following links.
 

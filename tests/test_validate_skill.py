@@ -73,14 +73,38 @@ def test_ids_must_be_sequential(validator, skill_copy):
     edit(skill_copy / "references" / "patterns.md", "### AT-04 ·", "### AT-14 ·")
     errors = validator.validate(skill_copy)
     assert any("expected AT-04" in e for e in errors)
-    assert any("summary table is missing AT-14" in e for e in errors)
 
 
 def test_summary_must_match_patterns(validator, skill_copy):
-    edit(skill_copy / "SKILL.md", "| AT-08 | Brochure language | 2 |", "| AT-08 | Sales talk | 1 |")
-    errors = validator.validate(skill_copy)
+    patterns = validator.check_patterns((skill_copy / "references" / "patterns.md").read_text())[1]
+    summary = "| AT-08 | Sales talk | 1 | a cluster |"
+    errors = validator.check_summary(summary, patterns)
     assert any("AT-08: name differs" in e for e in errors)
     assert any("AT-08: pass differs" in e for e in errors)
+
+
+def test_pattern_summary_is_optional(validator, skill_copy):
+    text = (skill_copy / "SKILL.md").read_text()
+    assert "| AT-01 |" not in text
+    assert validator.validate(skill_copy) == []
+
+
+def test_default_deliverable_is_source_edits(skill_copy):
+    text = (skill_copy / "SKILL.md").read_text()
+    assert "Edit local source by default" in text
+    assert "Apply the smallest effective changes directly" in text
+    assert "Only when explicitly asked for an audit or report without edits" in text
+    assert "The output is a review. Do not edit" not in text
+    assert "Do not commit," in text
+    assert "do not insert owner-question placeholders into a page" in text
+
+
+def test_writing_principles_are_required_reference(validator, skill_copy):
+    (skill_copy / "references" / "writing-principles.md").unlink()
+    assert any(
+        "missing file references/writing-principles.md" in error
+        for error in validator.validate(skill_copy)
+    )
 
 
 def test_retired_pattern_skips_content_checks(validator, skill_copy):

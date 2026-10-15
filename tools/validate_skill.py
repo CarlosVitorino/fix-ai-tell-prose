@@ -5,7 +5,7 @@
 
 This checks the rulebook's *structure*: frontmatter, file references, that every pattern
 has detection criteria, false-positive guidance, a fix rule, a replacement table and an
-example, and that SKILL.md's summary table matches references/patterns.md. It does not
+example, and that any optional SKILL.md summary table matches references/patterns.md. It does not
 read or judge any prose for AI tells.
 """
 
@@ -121,6 +121,8 @@ def check_patterns(text: str) -> tuple[list[str], dict[str, tuple[str, str, str]
 def check_summary(body: str, patterns: dict[str, tuple[str, str, str]]) -> list[str]:
     errors = []
     rows = {m.group(1): (m.group(2), m.group(3), m.group(4)) for m in SUMMARY_ROW_RE.finditer(body)}
+    if not rows:
+        return errors
     for pid, (name, pass_no, acts_on) in patterns.items():
         if pid not in rows:
             errors.append(f"SKILL.md summary table is missing {pid}")

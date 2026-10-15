@@ -1,4 +1,19 @@
 # fix AI-tell prose
+
+## Current direction (0.3)
+
+Keep the skill simple: human-writing principles, the owner's voice and optional references.
+The agent chooses tools and does the editorial work. Pattern IDs, cluster thresholds,
+extraction helpers and the legacy tally are not prerequisites for useful edits.
+Apply fixes directly to local page or component source; the owner reviews the diff afterward.
+Do not create review files or wait for per-finding approval unless report-only work was asked
+for explicitly. Keep factual fidelity, protected text and no authorship scores. Commit,
+push, deployment and live-CMS changes each require explicit authorization.
+The original brief and phased plan below describe the 0.1 build; this direction supersedes
+their mandatory pattern-catalogue and review-file workflows. Do not add an evaluation framework or wrapper
+without a separate request. Test helpers and file integrity without claiming those tests
+prove editorial quality.
+
 Site owners and agencies pay a developer to crawl their sitemap, score each page for AI-sounding prose, and present human-approved fixes rather than auto-publish them.
 What would stop this: nothing!
 The smallest thing worth building first: One SKILL.md (plus a small references/ folder) covering a first batch of the highest-confidence AI-tell patterns, each with detection criteria and a before→after replacement table, tested by running it against a handful of real pages and confirming a human reviewer would approve the rewrites. If it produces fixes you would actually sign off on, the crawl-and-score service wrapper can follow.

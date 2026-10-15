@@ -1,8 +1,49 @@
 # Review file format
 
-One Markdown file per page. A person reads it, decides on each finding, and the developer
-applies only what was approved. `scripts/tally.py` parses this format, so keep the
-headings and field labels exactly as shown.
+Report-only reference: use this only when the owner explicitly requests an issues report
+without edits. The default deliverable is edited source for the owner to review afterward.
+Do not create a review file or require decisions before making ordinary local copy fixes.
+
+Use the short example below. Adapt the layout to the task; exact quotes, useful reasons
+and review decisions matter more than field names. No pattern IDs are required.
+
+```markdown
+# Copy review: <page or component>
+
+Source: <URL or project file>. Reviewed: <date>.
+Voice: <what to preserve and where that voice comes from>.
+Scope: <what was checked, protected phrases and anything unavailable>.
+
+## 1. <Name the reader problem>
+
+Location: <block ID, heading, or source path and line>.
+
+Before:
+> <exact original passage>
+
+After:
+> <full proposed replacement, or (delete)>
+
+Why: <what improves for the reader>.
+Check with owner: <unresolved fact or question, if any>.
+Protected: <yes or no; identify protected words when relevant>.
+Decision: pending
+
+## Coverage
+
+<Anything omitted or inaccessible; questions still open.>
+```
+
+The owner changes pending to approved, edited or rejected. Do not decide for them.
+For several pages, keep an index with the source, review file and status for each.
+If no edits are warranted, explain what you checked; do not give an authorship verdict.
+
+## Legacy numbered format
+
+The rest of this reference documents the 0.1 format for existing reviews and the optional
+`scripts/tally.py` helper. That helper only counts numbered AT-pattern findings; it does
+not assess prose or count the unnumbered editorial findings above. Use this format only
+when compatibility with an existing numbered review is useful, not as a review requirement.
 
 ## Rules
 
